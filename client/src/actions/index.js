@@ -1,14 +1,14 @@
 import axios from 'axios';
-export const FETCH_VIDEOGAMES = 'FETCH_VIDEOGAMES';
+export const FETCH_MOVIE = 'FETCH_MOVIE';
 export const FETCH_BY_ID = 'FETCH_BY_ID';
 
-export function fetchVideogames() {
+export function fetchMovie() {
   return async function (dispatch) {
-    let jsonVideogames = await axios.get('http://localhost:3001/films');
+    let jsonMovie = await axios.get('http://localhost:3001/films');
 
     return dispatch({
-      type: FETCH_VIDEOGAMES,
-      payload: jsonVideogames.data,
+      type: FETCH_MOVIE,
+      payload: jsonMovie.data,
     });
   };
 }

@@ -4,4 +4,4 @@ app.use(cors())
 app.get("/",(req,res)=>{
     res.send("API is running ...")
 })
-app.listen(3001,console.log(`Todo good, server running port 3001`))
+app.listen(3001,console.log(` server running port 3001`))

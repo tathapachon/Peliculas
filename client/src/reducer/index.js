@@ -1,28 +1,28 @@
 import {
   
-    FETCH_VIDEOGAMES,
+    FETCH_MOVIE,
     FETCH_BY_ID
  
   } from '../actions';
   
   const initialState = {
-    videogames: [],
-    videogameDetail: [],
+   movie: [],
+   movieDetail: [],
 
   };
   
   export default function reducer(state = initialState, action) {
     switch (action.type) {
-      case FETCH_VIDEOGAMES:
+      case FETCH_MOVIE:
         return {
           ...state,
-          videogames: action.payload,
+          movie: action.payload,
         
         };
         case FETCH_BY_ID:
           return {
             ...state,
-            videogameDetail: action.payload,
+            movieDetail: action.payload,
           };
   
   
