@@ -2,6 +2,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchById } from '../../actions/index';
 import { useEffect , useState} from 'react';
+import axios from "axios"
 
 
 export default function Detalle(props) {
@@ -14,14 +15,35 @@ export default function Detalle(props) {
   }, [dispatch]);
 
 
-
-/*for(let i=0;i<videogame.characters?.length;i++){
+let arrayPer = []
+arrayPer=videogame.characters
+  setTimeout(()=>{
+    arrayPer=videogame.characters   
+    /*const getPeople= async ()=>{
+       for(let i =0;i< arrayPer.length;i++){
+      const res= await axios.get(arrayPer[i]) 
+      setPer(res.data)
+    } }
+       getPeople()
+       Promise.all(arrayPer.map(axios.get))
+.then(nuevo_arreglo => {
+  nuevo_arreglo.forEach(result => {
+    console.log(result.data);
+    setPer(result.data)
+  });
+});*/
+  },10000)
   
-    fetch(videogame.characters[i]).then(response => response.json())
-    .then(data => setPer(data))
-    .catch(error => console.log(error))
-   }
-console.log(per)*/
+
+
+
+
+
+console.log("personaje",per.name)
+
+
+
+
   return (
     <div>
       {
@@ -32,6 +54,7 @@ console.log(per)*/
           <p>{videogame.director}</p>
           <p>{videogame.producer}</p>
           <p>{videogame.characters}</p>
+          
        
         </div>
       }

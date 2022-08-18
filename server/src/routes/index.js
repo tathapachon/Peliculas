@@ -44,7 +44,7 @@ app.get("/films/:id", async (req, res) => {
         );
    
       let p = responseApi.data;
-
+     console.log(p.characters)
       gameToReturn = {
         title: p.title,
         release_date: p.release_date,
@@ -57,6 +57,35 @@ app.get("/films/:id", async (req, res) => {
     //    const charac = movies.map(async (c) =>  await c.characters.map(async (p) => await axios(p)))
         // console.log(charac)
        return res.status(200).send(gameToReturn);
+        
+    } catch (error) {
+        console.log(error);        
+    }
+});
+
+app.get("/people", async (req, res) => {
+    const { id } = req.params;
+    try {
+        let gameToReturn;
+        const responseApi = await axios(
+            `https://swapi.dev/api/people/`
+            
+        );
+   
+      let p = responseApi.data;
+console.log(p)
+     /* gameToReturn = {
+        title: p.title,
+        release_date: p.release_date,
+        director: p.director,
+        producer: p.producer,
+        opening_crawl: p.opening_crawl,  
+        characters: p.characters 
+      };*/
+    
+    //    const charac = movies.map(async (c) =>  await c.characters.map(async (p) => await axios(p)))
+        // console.log(charac)
+       return res.status(200).send(p);
         
     } catch (error) {
         console.log(error);        

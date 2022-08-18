@@ -10,9 +10,7 @@ export default function Card({ title , release_date,director,producer}) {
           <p>{release_date}</p>
           <p>{director}</p>
           <p>{producer}</p>
-        <button>
-          Detalle
-        </button>
+        
       </div>
     );
   }
